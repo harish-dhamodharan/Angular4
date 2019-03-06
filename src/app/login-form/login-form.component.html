@@ -1,0 +1,57 @@
+<!--
+<div class="form-outer-div modal animate" id="login-form-popup">
+  <form class="form modal-content">
+    <span onclick="document.getElementById('login-form-popup').style.display='none'" class="close">&times;</span>
+    <div class="form-row">
+      <p class="login-heading">
+        Welcome
+      </p>
+    </div>
+    <div class="form-row">
+      <div class="input-label-combo">
+        <input id="email" type="email">
+        <label for="em" class="emailLbl">Email</label>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="input-label-combo">
+        <input id="password" type="password">
+        <label for="passwordLbl" >Password</label>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="button">
+        <button [@loginErrorIndicator]='state' name="login" value="login" (click)="validateLogin()">Login</button>
+      </div>  
+    </div>
+  </form>
+</div>
+-->
+<div class="form-outer-div modal animate" id="login-form-popup">
+    <form class="form modal-content">
+      <button (click)="hideModal()" class="close">&times;</button>
+      <div class="form-row">
+        <p class="login-heading">
+          Welcome
+        </p>
+      </div>
+      <div class="form-row">
+        <div class="input-label-combo">
+          <input [(ngModel)] = "emailStr" name = "email" type = "email">
+          <label for="em" class="emailLbl">Email</label>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="input-label-combo">
+          <input name = "password" [(ngModel)] = "passwordStr" type = "password">
+          <label for="passwordLbl" >Password</label>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="button">
+          <button name="login" value="loginBtn" (click)="validateLogin()">Login</button>
+        </div>  
+      </div>
+    </form>
+  </div>
+  

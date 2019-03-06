@@ -1,0 +1,14 @@
+.footer {
+    background: #3399ff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-family: acherusgrotesque-regular;
+    color: lightgray;
+    font-size: 12px;
+    padding: 10px;
+    text-align: center;
+}
+p {
+    color: white;
+}

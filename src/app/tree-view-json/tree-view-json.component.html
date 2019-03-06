@@ -1,0 +1,13 @@
+<div class="tree">
+    <ul id="myUL">
+        <li *ngFor="let level1 of formattedJson" id="{{level1.assetType}}">
+          <span [ngClass]="(level1.selected === true) ?  {'caret-down' : true, 'caret' : true }  :  { 'caret-down' : false, 'caret' : true }" (click)="openTree1(level1)  ">
+            {{level1.assetType}}</span>
+          <ul [ngClass] =  "(level1.selected === true) ?  { 'active' : true, 'nested' : false }  :  { 'active' : false, 'nested' : true }" >
+            <li *ngFor="let level2 of level1.assets" id={{level2.id}}>{{level2.name}}</li>
+          </ul>
+        </li>
+    </ul> 
+</div>
+
+

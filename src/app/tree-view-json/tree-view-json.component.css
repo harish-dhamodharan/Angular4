@@ -1,0 +1,41 @@
+ul, #myUL {
+    list-style-type: none;
+  }
+  
+#myUL {
+    margin: 0;
+    padding: 0;
+}
+  
+.caret {
+    cursor: pointer;
+    user-select: none;
+}
+  
+.caret::before {
+    content: "\003E";
+    color: rgb(128, 128, 128);
+    display: inline-block;
+    margin-right: 6px;
+    transition: 0.5s;
+}
+  
+.caret-down::before {
+    transform: rotate(90deg); 
+    transition: 0.5s; 
+}
+  
+.nested {
+    display: none;
+}
+  
+.active {
+    display: block;  
+}  
+.tree {
+    margin: 20px;
+    font-size: 14px;
+    font-family: acherusgrotesque-regular;
+  }
+
+  

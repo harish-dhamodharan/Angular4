@@ -1,0 +1,19 @@
+<div class="nav" id="nav_bar">
+    <a href="#">Home</a>
+    <a href=#index>Departments</a>
+    <a href=#index>Community</a>
+    <a href=#index>About</a>
+    <a class="login nav" (click)="popUpOpen()">{{btn}}</a>    
+      <app-login-form 
+        (emitDisplay)="popUpClose($event)"
+        (emitName)="funcLogin($event)">
+      </app-login-form>
+    <div class="icon" id="iconID" (click)="navBarResponsive()">
+        <div class="menu_icon">
+          <div class="lines"></div>
+          <div class="lines"></div>
+          <div class="lines"></div>
+        </div>
+    </div>  
+</div>
+  
