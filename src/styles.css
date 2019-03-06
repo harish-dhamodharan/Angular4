@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: acherusgrotesque-regular;
+    font-style: normal;
+    src: url(assets/fonts/acherusgrotesque-regular.otf) format("opentype");
+}
+
+@font-face {
+  font-family: CaviarDreams_Bold;
+  font-style: bold;
+  src: url(assets/fonts/CaviarDreams_Bold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: LemonMilkbold;
+  font-style: bold;
+  src: url(assets/fonts/LemonMilkbold.otf) format("opentype");
+}
+
+@font-face {
+  font-family: futurist;
+  font-style: normal;
+  src: url(assets/fonts/futurist.ttf) format("truetype");
+}
