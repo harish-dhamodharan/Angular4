@@ -4,8 +4,10 @@
     <a href=#index>Community</a>
     <a href=#index>About</a>
     <a class="login nav" (click)="popUpOpen()">{{btn}}</a>    
+    <!-- <p>"shouldIbeLoaded in parent" = {{shouldIbeLoaded}}</p> -->
       <app-login-form 
-        (emitDisplay)="popUpClose($event)"
+        [shouldIbeLoaded]="shouldIbeLoaded"
+        (emitShouldIbeLoaded)="popUpCloseNotify($event)"
         (emitName)="funcLogin($event)">
       </app-login-form>
     <div class="icon" id="iconID" (click)="navBarResponsive()">

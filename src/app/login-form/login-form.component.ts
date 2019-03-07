@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter/*, Input, OnChanges, SimpleChanges*/ } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input, OnChanges, SimpleChanges} from '@angular/core';
 //import { trigger, state, style, transition, animate, keyframes } from '@angular/animations'
 
 @Component({
@@ -21,17 +21,24 @@ import { Component, OnInit, Output, EventEmitter/*, Input, OnChanges, SimpleChan
       
   ])]*/
 })
-export class LoginFormComponent implements OnInit {
+export class LoginFormComponent implements OnInit, OnChanges {
   @Output() emitName = new EventEmitter();
-  @Output() emitDisplay = new EventEmitter();
+  @Input() shouldIbeLoaded : boolean;
+  @Output() emitShouldIbeLoaded = new EventEmitter();
   btnName : string;
   emailStr : string;
   passwordStr : string;
-  constructor() { }
+  constructor() { 
+    }
 
   ngOnInit() {
     this.btnName = "Login";
-    }
+    console.log("shouldIbeLoaded value in child --> " + this.shouldIbeLoaded);  
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log('ngOnChanges - child : shouldIbeLoaded ---> ', this.shouldIbeLoaded);
+  }
 
   validateLogin() {
     if (this.emailStr === "welcome" && this.passwordStr === "welcome") {
@@ -39,13 +46,15 @@ export class LoginFormComponent implements OnInit {
       this.emitName.emit(this.btnName);
     }
     else {
-      this.emitName.emit('Login');
+      this.emitName.emit("Login");
     }
 
   }
   hideModal() {
     console.log("hideModal() reached");
-    this.emitDisplay.emit('none');
- 
+    console.log("hideModal():before-closing shouldIbeLoaded ---> " + this.shouldIbeLoaded);
+    this.shouldIbeLoaded = false;
+    this.emitShouldIbeLoaded.emit(this.shouldIbeLoaded);
+    console.log("hideModal():after-closing shouldIbeLoaded ---> " + this.shouldIbeLoaded);
   }
 }

@@ -27,8 +27,9 @@
   </form>
 </div>
 -->
-<div class="form-outer-div modal animate" id="login-form-popup">
-    <form class="form modal-content">
+<!-- <p>"shouldIbeLoaded in child" = {{shouldIbeLoaded}}</p> -->
+<div *ngIf = "shouldIbeLoaded == true" class="form-outer-div modal animate" id="login-form-popup">
+    <form class="form modal-content" method="POST">
       <button (click)="hideModal()" class="close">&times;</button>
       <div class="form-row">
         <p class="login-heading">
@@ -49,7 +50,7 @@
       </div>
       <div class="form-row">
         <div class="button">
-          <button name="login" value="loginBtn" (click)="validateLogin()">Login</button>
+          <button type="submit" name="login" value="loginBtn" (click)="validateLogin()">Login</button>
         </div>  
       </div>
     </form>

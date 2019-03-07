@@ -7,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
   btn: string;
+  shouldIbeLoaded : boolean;
   constructor() { }
 
   ngOnInit() {
     this.btn = "Login";
+    this.shouldIbeLoaded = false;
   }
 
   navBarResponsive() {
@@ -24,19 +26,19 @@ export class NavBarComponent implements OnInit {
   }
 
   popUpOpen() {
-    if(this.btn === "Login") {
-      document.getElementById('login-form-popup').style.display='block';
-      console.log("popUpOpen() style.display ---> " + document.getElementById('login-form-popup').style.display);  
+    if(this.btn === "Login" && !this.shouldIbeLoaded) {
+      console.log("popUpOpen():before-open shouldIbeLoaded ---> " + this.shouldIbeLoaded);
+      this.shouldIbeLoaded = true;
+      console.log("popUpOpen():after-open shouldIbeLoaded ---> " + this.shouldIbeLoaded);
     }
   }
-  
-  popUpClose(event) {
-    document.getElementById('login-form-popup').style.display=event;
-    console.log("popUpClose() style.display ---> " + document.getElementById('login-form-popup').style.display);
-  }  
 
+  popUpCloseNotify(event){
+    this.shouldIbeLoaded=event;
+  }
+  
   funcLogin(event) {
-    console.log("Login User Name--->" + event);
+    console.log("Login User Name ---> " + event);
     this.btn=event;
   }
 }
